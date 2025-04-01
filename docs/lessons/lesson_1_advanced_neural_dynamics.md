@@ -60,33 +60,36 @@ nonlinear behavior through chaos. This model's chaotic patterns mimic communicat
 within neuron clusters, capturing the essence of unpredictable neuronal firing patterns under 
 varying stimuli. 
 
-import numpy as np 
-import matplotlib.pyplot as plt 
-from scipy.integrate import odeint 
-# Parameters for the Lorenz system 
-sigma = 10.0 
-beta = 8.0 / 3.0 
-rho = 28.0 
-# Lorenz equations 
-def lorenz(state, t): 
-x, y, z = state 
-dxdt = sigma * (y - x) 
-dydt = x * (rho - z) - y 
-dzdt = x * y - beta * z 
-return np.array([dxdt, dydt, dzdt]) 
-# Set initial conditions 
-initial_state = [0.0, 1.0, 1.05] 
-t = np.linspace(0, 40, 10000) 
-trajectory = odeint(lorenz, initial_state, t) 
-# 3D plot of Lorenz attractor 
-fig = plt.figure(figsize=(10, 7)) 
-ax = fig.add_subplot(111, projection='3d') 
-ax.plot(trajectory[:, 0], trajectory[:, 1], trajectory[:, 2], color='blue') 
-ax.set_title('Lorenz Attractor (Chaotic Dynamics)') 
-ax.set_xlabel('X-axis') 
-ax.set_ylabel('Y-axis') 
-ax.set_zlabel('Z-axis') 
-plt.show() 
-In this example, the Lorenz system's chaotic nature reflects neuronal complexity—understanding 
-it helps comprehend how small changes can yield significant variations in output (neural firing 
-patterns).
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.integrate import odeint
+
+# Parameters for the Lorenz system
+sigma = 10.0
+beta = 8.0 / 3.0
+rho = 28.0
+
+# Lorenz equations
+def lorenz(state, t):
+    x, y, z = state
+    dxdt = sigma * (y - x)
+    dydt = x * (rho - z) - y
+    dzdt = x * y - beta * z
+    return np.array([dxdt, dydt, dzdt])
+
+# Set initial conditions
+initial_state = [0.0, 1.0, 1.05]
+t = np.linspace(0, 40, 10000)
+trajectory = odeint(lorenz, initial_state, t)
+
+# 3D plot of Lorenz attractor
+fig = plt.figure(figsize=(10, 7))
+ax = fig.add_subplot(111, projection='3d')
+ax.plot(trajectory[:, 0], trajectory[:, 1], trajectory[:, 2], color='blue')
+
+ax.set_title('Lorenz Attractor (Chaotic Dynamics)')
+ax.set_xlabel('X-axis')
+ax.set_ylabel('Y-axis')
+ax.set_zlabel('Z-axis')
+
+plt.show()
