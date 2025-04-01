@@ -34,6 +34,13 @@ Pros: A self-gated activation function that can outperform ReLU in deep learning
 
 Cons: Higher computational cost due to the additional sigmoid operation.
 
+Function   | Description                        | Advantages                        | Disadvantages
+-----------|------------------------------------|----------------------------------|---------------------------
+ReLU       | Linear for positive inputs        | Sparse representation            | Not zero-centered
+ELU        | Smooth transition for negatives   | Robust against noise             | Higher computational cost
+Swish      | Non-monotonic and smooth         | Improves model accuracy          | Computationally intensive
+
+
 2.2 Performance Analysis
 Empirical Evaluations:
 Comparing activation functions based on performance metrics like accuracy and convergence speed:
