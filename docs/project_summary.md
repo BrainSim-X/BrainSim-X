@@ -1,4 +1,5 @@
 BrainSim-X Project Summary
+
 BrainSim-X is an ambitious initiative at the intersection of neuroscience, AI, and quantum computing. It provides a powerful platform for advancing research and applications in cognitive science, pushing the boundaries of brain simulation technology.
 
 Objectives
